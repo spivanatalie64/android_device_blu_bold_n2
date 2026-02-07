@@ -1,19 +1,11 @@
-# Android fstab file.
-# The filesystem that contains the filesystem checker binary (typically /system) cannot
-# specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
-
-# mount point	fstype		device				[device2]			flags
-/dev/block/platform/bootdevice/by-name/system		ext4		ro,barrier=1	wait,slotselect,avb=vbmeta_system,logical,first_stage_mount
-/dev/block/platform/bootdevice/by-name/vendor		ext4		ro,barrier=1	wait,slotselect,avb=vbmeta_vendor,logical,first_stage_mount
-/dev/block/platform/bootdevice/by-name/product		ext4		ro,barrier=1	wait,slotselect,avb=vbmeta_product,logical,first_stage_mount
-/dev/block/platform/bootdevice/by-name/odm			ext4		ro,barrier=1	wait,slotselect,avb=vbmeta_odm,logical,first_stage_mount
-
-/dev/block/platform/bootdevice/by-name/userdata		f2fs		rw,discard,inline_xattr,inline_data,inline_encrypt	wait,check,fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized+wrappedkey_v0,wrappedkey,quota,reservedsize=128M,checkpoint=disable,fsverity
-/dev/block/platform/bootdevice/by-name/metadata		f2fs		rw,discard,nosuid,nodev,noatime,data=ordered,inline_xattr,inline_data,inline_encrypt	wait,formattable,quota,reservedsize=128M,checkpoint=disable,fsverity
-/dev/block/platform/bootdevice/by-name/cache		f2fs		rw,discard,nosuid,nodev,noatime,data=ordered,inline_xattr,inline_data,inline_encrypt	wait,check,fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized+wrappedkey_v0,wrappedkey,quota,reservedsize=128M,checkpoint=disable,fsverity
-
-# Super partition dynamic partitions
-/dev/block/platform/bootdevice/by-name/super		erofs		ro,barrier=1	wait,slotselect,avb,logical,first_stage_mount
-
-# Recovery
-/dev/block/platform/bootdevice/by-name/recovery		ramdisk		ro			wait
+# Android fstab file for BLU Bold N2
+# <src> <mnt_point> <type> <mnt_flags and options> <fs_mgr_flags>
+system  /system  ext4  ro,barrier=1  wait,slotselect,avb=vbmeta_system,logical,first_stage_mount
+vendor  /vendor  ext4  ro,barrier=1  wait,slotselect,avb=vbmeta_vendor,logical,first_stage_mount
+product /product ext4  ro,barrier=1  wait,slotselect,avb,logical,first_stage_mount
+/dev/block/by-name/userdata  /data  f2fs  noatime,nosuid,nodev,discard,inlinecrypt  wait,check,formattable,quota,reservedsize=128M,checkpoint=fs
+/dev/block/by-name/cache  /cache  ext4  noatime,nosuid,nodev,noauto_da_alloc,discard  wait,check
+/dev/block/by-name/metadata  /metadata  ext4  noatime,nosuid,nodev,discard  wait,formattable,first_stage_mount
+/dev/block/by-name/boot  /boot  emmc  defaults  recoveryonly
+/dev/block/by-name/dtbo  /dtbo  emmc  defaults  defaults
+/dev/block/by-name/vbmeta  /vbmeta  emmc  defaults  defaults

@@ -20,11 +20,21 @@ BOARD_HAS_MTK_HARDWARE := true
 # Kernel
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_SOURCE := kernel/blu/bold_n2
-TARGET_KERNEL_CONFIG := bold_n2_defconfig
+# Using prebuilt kernel for now (replace with source when available)
+TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt-kernel/Image.gz
+TARGET_PREBUILT_DTB := $(LOCAL_PATH)/prebuilt-kernel/dtb.img
+BOARD_PREBUILT_DTBOIMAGE := $(LOCAL_PATH)/prebuilt-kernel/dtbo.img
+BOARD_INCLUDE_DTB_IN_BOOTIMG := true
+# For future kernel source build:
+# TARGET_KERNEL_SOURCE := kernel/blu/bold_n2
+# TARGET_KERNEL_CONFIG := bold_n2_defconfig
 BOARD_KERNEL_IMAGE_NAME := Image.gz
-BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64S3
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x07c08000 --tags_offset 0x0bc08000 --header_version 2
+BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 buildvariant=user
+BOARD_KERNEL_BASE := 0x40078000
+BOARD_KERNEL_PAGESIZE := 2048
+BOARD_RAMDISK_OFFSET := 0x07c08000
+BOARD_KERNEL_TAGS_OFFSET := 0x0bc08000
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET) --header_version 2 --dtb $(TARGET_PREBUILT_DTB)
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144

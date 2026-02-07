@@ -54,3 +54,6 @@ PRODUCT_COPY_FILES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
+
+# Inherit proprietary vendor files
+$(call inherit-product, vendor/blu/bold_n2/bold_n2-vendor.mk)
