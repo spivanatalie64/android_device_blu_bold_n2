@@ -1,0 +1,16 @@
+# Fingerprint SELinux policy for BLU Bold N2 (MediaTek MT6833)
+# Purpose: allow fingerprint HAL and vendor daemon to access device nodes and communicate
+
+# Types
+type fingerprintd, domain;
+type vendor_fingerprint_exec, exec_type, file_type;
+type fingerprint_device, chr_file;
+
+# Allow the fingerprint daemon to access the fingerprint device node
+allow fingerprintd fingerprint_device:chr_file { read write ioctl };
+
+# Allow execution of vendor fingerprint binary
+allow fingerprintd vendor_fingerprint_exec:file { execute open };
+
+# TODO: refine binder and hwservice permissions after on-device testing
+# End of fingerprint.te

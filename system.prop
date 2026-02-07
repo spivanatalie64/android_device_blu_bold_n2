@@ -31,6 +31,16 @@ media.stagefright.enable-qcp=true
 # RIL
 rild.libpath=/vendor/lib64/librilmtk.so
 rild.libargs=-d /dev/ttyC0
+# IMS / VoLTE / VoWiFi defaults
+persist.vendor.ims.enable=1
+persist.vendor.vowifi.enable=1
+
+# IMS
+persist.mtk_ims_support=1
+persist.mtk_volte_support=1
+persist.mtk_wfc_support=1
+persist.mtk_vowifi_support=1
+ro.mtk.ims_audio_alg=1
 
 # USB
 persist.sys.usb.config=mtp,adb

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Mixer paths optimized for MediaTek MT6833 on BLU Bold N2 -->
+<mixer>
+    <!-- Playback controls -->
+    <ctl name="Speaker Playback Volume">
+        <value>84</value>
+    </ctl>
+    <ctl name="HP Playback Volume">
+        <value>84</value>
+    </ctl>
+    <ctl name="BT Headset Playback Volume">
+        <value>84</value>
+    </ctl>
+
+    <!-- Capture controls -->
+    <ctl name="Main Mic Capture Volume">
+        <value>6</value>
+    </ctl>
+
+    <!-- Paths -->
+    <path name="speaker_playback">
+        <ctl name="SPK Switch" value="1"/>
+        <ctl name="Speaker Playback Volume" value="84"/>
+    </path>
+
+    <path name="headphone_playback">
+        <ctl name="HP Switch" value="1"/>
+        <ctl name="HP Playback Volume" value="84"/>
+    </path>
+
+    <path name="bt_playback">
+        <ctl name="BT SCO Switch" value="1"/>
+        <ctl name="BT Headset Playback Volume" value="84"/>
+    </path>
+
+    <path name="mic_capture">
+        <ctl name="Main Mic Capture Switch" value="1"/>
+        <ctl name="Main Mic Capture Volume" value="6"/>
+    </path>
+
+    <!-- Recommended routing for common use-cases -->
+    <route name="playback_speaker" input="pcm_out" output="speaker_playback"/>
+    <route name="playback_headphone" input="pcm_out" output="headphone_playback"/>
+    <route name="playback_bt" input="pcm_out" output="bt_playback"/>
+    <route name="record_primary" input="mic_in" output="mic_capture"/>
+</mixer>

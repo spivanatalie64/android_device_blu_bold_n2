@@ -1,0 +1,18 @@
+# MediaTek-specific services SELinux policy for BLU Bold N2 (MT6833)
+# Purpose: provide targeted permissions for Mediatek platform daemons and hw modules
+
+# Example types for MediaTek services
+type mediatek_vendor_service, domain;
+type mediatek_hal_exec, exec_type, file_type;
+
+type mtk_misc_device, chr_file;
+
+# Allow mediatek vendor service to access misc devices and create sockets
+allow mediatek_vendor_service mtk_misc_device:chr_file { read write ioctl };
+allow mediatek_vendor_service self:unix_stream_socket { create bind listen accept send recv };
+
+# Allow execution of Mediatek HAL binaries
+allow mediatek_vendor_service mediatek_hal_exec:file { execute open };
+
+# TODO: Add specifc rules for mtk_power, mtk_thermal, modem interfaces after researching MT6833
+# End of mediatek_services.te

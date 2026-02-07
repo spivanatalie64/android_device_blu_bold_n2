@@ -1,0 +1,31 @@
+# File contexts for BLU Bold N2 (MediaTek MT6833)
+# Format: <path> <context>
+
+# Fingerprint device and binaries
+/dev/fingerprint u:object_r:fingerprint_device:s0
+/vendor/bin/fingerprintd u:object_r:vendor_fingerprint_exec:s0
+/vendor/lib64/hw/fingerprint.mt*.so u:object_r:vendor_file:s0
+
+# Camera device nodes and HAL
+/dev/video* u:object_r:camera_device:s0
+/vendor/bin/hw/camera.u:object_r:hal_camera_exec:s0
+/vendor/lib64/hw/camera.mtk.so u:object_r:vendor_file:s0
+
+# Audio
+/dev/snd/* u:object_r:audio_hw:s0
+/vendor/bin/hw/audio.u:object_r:audio_hal_exec:s0
+
+# WiFi/Bluetooth
+/dev/wifi* u:object_r:wlan_chip:s0
+/dev/bt* u:object_r:bt_chip:s0
+/vendor/firmware/wlan/* u:object_r:firmware_file:s0
+
+# GPS
+/dev/ttyMT* u:object_r:gps_device:s0
+/vendor/bin/gps.u:object_r:gnss_hal_exec:s0
+
+# MediaTek misc
+/dev/mtk_* u:object_r:mtk_misc_device:s0
+/vendor/bin/mediatek_* u:object_r:mediatek_hal_exec:s0
+
+# End of file_contexts

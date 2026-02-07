@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- UI customizations and sensible defaults for this device -->
+    <bool name="config_show_qs_tiles">true</bool>
+    <bool name="config_allow_full_screen_gestures">true</bool>
+    <!-- Suggested nav bar height override (dp) -->
+    <integer name="config_nav_bar_height">48</integer>
+</resources>

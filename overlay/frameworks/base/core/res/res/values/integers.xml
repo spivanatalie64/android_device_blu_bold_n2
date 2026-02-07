@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Battery capacity (mAh) -->
+    <integer name="config_battery_capacity">4200</integer>
+    <integer name="config_battery_mah">4200</integer>
+</resources>

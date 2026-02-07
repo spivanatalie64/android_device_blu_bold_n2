@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Camera parameter overlays for BLU Bold N2 (updated for MT6833 / 64MP rear) -->
+    <integer name="config_back_camera_megapixels">64</integer>
+    <integer name="config_front_camera_megapixels">16</integer>
+    <bool name="config_has_telephoto_camera">false</bool>
+    <bool name="config_has_ultrawide_camera">false</bool>
+    <!-- Max capture resolution (approx for 64MP sensor) -->
+    <integer name="config_camera_max_width">9248</integer>
+    <integer name="config_camera_max_height">6936</integer>
+</resources>

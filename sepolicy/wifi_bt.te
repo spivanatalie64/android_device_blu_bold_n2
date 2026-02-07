@@ -1,0 +1,20 @@
+# WiFi and Bluetooth SELinux policy for BLU Bold N2 (MediaTek MT6833)
+# Purpose: allow WiFi and Bluetooth daemons to access firmware, netlink, sockets and device nodes
+
+type wpa_supplicant, domain;
+type bluetoothd, domain;
+type wlan_chip, chr_file;
+type bt_chip, chr_file;
+
+audio_server_domain(wpa_supplicant) # reuse macro if available, otherwise harmless comment
+
+# WiFi: access to firmware and device nodes
+allow wpa_supplicant wlan_chip:chr_file { read write ioctl };
+allow wpa_supplicant self:netlink_socket { send recv };
+
+# Bluetooth: access to BT device nodes and sockets
+allow bluetoothd bt_chip:chr_file { read write ioctl };
+allow bluetoothd self:unix_stream_socket { create connect write read };
+
+# TODO: Verify interface names and firmware paths on MT6833
+# End of wifi_bt.te

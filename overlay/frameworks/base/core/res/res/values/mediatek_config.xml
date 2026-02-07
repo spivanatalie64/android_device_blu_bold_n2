@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- MediaTek-specific configuration hints -->
+    <bool name="config_has_mediatek_platform">true</bool>
+    <string name="config_soc_brand">mediatek</string>
+    <!-- Enable HAL hints commonly required by MediaTek vendors -->
+    <bool name="config_uses_vendor_hwc">true</bool>
+    <bool name="config_uses_vendor_audio">true</bool>
+</resources>

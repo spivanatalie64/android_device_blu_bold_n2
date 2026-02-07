@@ -15,9 +15,17 @@ on post-fs-data
     mkdir /data/vendor/wifi 0770 wifi wifi
     mkdir /data/vendor/wifi/wpa 0770 wifi wifi
     mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
+    # Start power init to apply governor and power tweaks
+    start power.init
 
 service vendor.fps_hal /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
     class late_start
     user system
     group system input
+
+service power.init /vendor/bin/power-init.sh
+    class late_start
+    user root
+    group root
+    oneshot
 

@@ -1,0 +1,13 @@
+# GPS SELinux policy for BLU Bold N2 (MediaTek MT6833)
+# Purpose: allow GPS/vendor GNSS HAL to access serial devices, sockets and hardware
+
+type gpsd, domain;
+type gnss_hal_exec, exec_type, file_type;
+type gps_device, chr_file;
+
+allow gpsd gps_device:chr_file { read write ioctl };
+allow gpsd self:unix_stream_socket { create connect write read };
+allow gpsd gnss_hal_exec:file { execute open };
+
+# TODO: Confirm /dev/tty* or other GNSS device nodes and update file contexts accordingly
+# End of gps.te

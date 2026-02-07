@@ -1,0 +1,19 @@
+# Camera HAL SELinux policy for BLU Bold N2 (MediaTek MT6833)
+# Purpose: permit camera HAL to access camera devices, shared memory, and camera-related sockets
+
+type camera_service, domain;
+type camera_device, chr_file;
+type hal_camera_exec, exec_type, file_type;
+
+# Camera HAL execution
+allow camera_service hal_camera_exec:file { execute open };
+
+# Access to camera device nodes
+allow camera_service camera_device:chr_file { read write ioctl };
+
+# Allow camera to create and use unix domain sockets and shared memory
+allow camera_service self:unix_stream_socket { create connect write read };
+allow camera_service self:shm { create read write }
+
+# TODO: Add finer-grained rules for metadata and vendor-specific camera modules
+# End of camera.te

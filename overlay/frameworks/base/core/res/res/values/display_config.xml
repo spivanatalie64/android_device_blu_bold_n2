@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Device display configuration for BLU Bold N2 -->
+    <integer name="config_display_width">1080</integer>
+    <integer name="config_display_height">2340</integer>
+    <!-- Calculated density (approx) for 6.6" 1080x2340 -->
+    <integer name="config_display_density_dpi">391</integer>
+    <string name="config_display_panel_type">AMOLED</string>
+</resources>

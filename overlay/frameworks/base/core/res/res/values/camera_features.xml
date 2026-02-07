@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Device camera feature declarations for BLU Bold N2 (MT6833) -->
+    <bool name="config_camera_supports_4k">true</bool>
+    <bool name="config_camera_supports_hevc">true</bool>
+    <bool name="config_has_front_camera">true</bool>
+    <bool name="config_camera_api_hal3">true</bool>
+</resources>

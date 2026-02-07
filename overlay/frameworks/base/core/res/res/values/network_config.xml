@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Network / carrier capabilities for BLU Bold N2 -->
+    <string name="config_carrier_region">global</string>
+    <string name="config_supported_radio_types">GSM,UMTS,LTE,NR</string>
+    <bool name="config_supports_volte">true</bool>
+    <bool name="config_supports_voice_on_lte">true</bool>
+    <!-- Enable VoWiFi and 5G support hints -->
+    <bool name="config_supports_vowifi">true</bool>
+    <bool name="config_supports_5g">true</bool>
+</resources>

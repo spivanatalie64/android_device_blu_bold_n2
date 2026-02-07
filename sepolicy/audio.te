@@ -1,0 +1,20 @@
+# Audio HAL SELinux policy for BLU Bold N2 (MediaTek MT6833)
+# Purpose: permit audio HAL and vendor audio server to access ALSA devices and audio-related resources
+
+type audioserver, domain;
+type audio_hw, chr_file;
+type audio_hal_exec, exec_type, file_type;
+
+audio_server_domain(audioserver)
+
+# Allow audioserver to access ALSA character devices
+allow audioserver audio_hw:chr_file { read write ioctl };
+
+# Allow execution of vendor audio HAL
+allow audioserver audio_hal_exec:file { execute open };
+
+# Allow network/loopback sockets used by audio policy
+allow audioserver self:unix_stream_socket { create connect write read };
+
+# TODO: Tune permissions based on on-device denials and vendor HAL requirements
+# End of audio.te
