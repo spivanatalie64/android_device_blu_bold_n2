@@ -1,0 +1,67 @@
+# Audio
+vendor/lib/hw/audio.primary.mt6833.so
+vendor/lib64/hw/audio.primary.mt6833.so
+vendor/lib/hw/audio.usb.mt6833.so
+vendor/lib64/hw/audio.usb.mt6833.so
+
+# Bluetooth
+vendor/lib/hw/bluetooth.default.so
+vendor/lib64/hw/bluetooth.default.so
+vendor/lib/libbluetooth_mtk.so
+vendor/lib64/libbluetooth_mtk.so
+
+# Camera
+vendor/lib/hw/camera.mt6833.so
+vendor/lib64/hw/camera.mt6833.so
+vendor/lib/libcam.halsensor.so
+vendor/lib64/libcam.halsensor.so
+
+# Fingerprint
+vendor/lib/hw/fingerprint.fpc.so
+vendor/lib64/hw/fingerprint.fpc.so
+vendor/lib/hw/fingerprint.goodix.so
+vendor/lib64/hw/fingerprint.goodix.so
+
+# GPS
+vendor/lib/hw/gps.default.so
+vendor/lib64/hw/gps.default.so
+
+# Graphics
+vendor/lib/hw/gralloc.mt6833.so
+vendor/lib64/hw/gralloc.mt6833.so
+vendor/lib/hw/hwcomposer.mt6833.so
+vendor/lib64/hw/hwcomposer.mt6833.so
+
+# Media
+vendor/lib/libMtkOmxCore.so
+vendor/lib64/libMtkOmxCore.so
+vendor/lib/libMtkOmxVdec.so
+vendor/lib64/libMtkOmxVdec.so
+
+# RIL
+vendor/lib/librilmtk.so
+vendor/lib64/librilmtk.so
+vendor/lib/libmtk-ril.so
+vendor/lib64/libmtk-ril.so
+
+# Sensors
+vendor/lib/hw/sensors.mt6833.so
+vendor/lib64/hw/sensors.mt6833.so
+
+# Thermal
+vendor/lib/libthermalalgo.so
+vendor/lib64/libthermalalgo.so
+
+# WiFi
+vendor/lib/libwifi-hal-mtk.so
+vendor/lib64/libwifi-hal-mtk.so
+vendor/firmware/wmt_wifi_3_1_ram_code.bin
+vendor/firmware/wmt_wifi_3_1_ram_code.bin
+
+# DRM
+vendor/lib/libdrmmtkplugin.so
+vendor/lib64/libdrmmtkplugin.so
+
+# Power
+vendor/lib/libpowerhal.so
+vendor/lib64/libpowerhal.so

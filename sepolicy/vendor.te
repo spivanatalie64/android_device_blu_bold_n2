@@ -1,0 +1,30 @@
+# Allow system_server to access MediaTek HALs
+allow system_server vendor_mtk_hal_file:dir search;
+allow system_server vendor_mtk_hal_file:file r_file_perms;
+
+# Fingerprint
+allow system_server fingerprintd:unix_stream_socket connectto;
+allow system_server fingerprintd_data_file:dir rw_dir_perms;
+allow system_server fingerprintd_data_file:file create_file_perms;
+
+# Face unlock
+allow system_server face_hal_file:dir search;
+allow system_server face_hal_file:file r_file_perms;
+
+# Audio
+allow audioserver audioserver:capability sys_nice;
+allow audioserver vendor_audio_file:dir search;
+allow audioserver vendor_audio_file:file r_file_perms;
+
+# Bluetooth
+allow bluetooth bluetooth:capability net_admin;
+allow bluetooth vendor_bluetooth_file:dir search;
+allow bluetooth vendor_bluetooth_file:file r_file_perms;
+
+# WiFi
+allow system_server vendor_wifi_file:dir search;
+allow system_server vendor_wifi_file:file r_file_perms;
+
+# Camera
+allow cameraserver vendor_camera_file:dir search;
+allow cameraserver vendor_camera_file:file r_file_perms;
